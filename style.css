@@ -100,42 +100,7 @@ body {
   display: none;
 }
 
-/* FLOATING MOBILE VERSION BADGE */
-.mobile-version-chip {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(30, 12, 18, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(74, 222, 128, 0.4);
-  color: #86EFAC;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  pointer-events: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
 
-.chip-pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #22C55E;
-  box-shadow: 0 0 10px #22C55E;
-  animation: pulseDot 1.4s infinite ease-in-out;
-}
-
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.75); }
-}
 
 /* ==========================================================================
    SPLASH / WELCOME SCREEN (CHÀO MỪNG ĐẾN VỚI HBCOFFEE)
@@ -412,41 +377,17 @@ body {
 }
 
 /* DẢI RUY BĂNG CHÀO MỪNG LẤP LÁNH */
-.splash-badge-ribbon {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  max-width: 92vw;
-  box-sizing: border-box;
-  color: #FFE699;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(225, 29, 72, 0.25) 100%);
-  padding: 5px 14px;
-  border-radius: 999px;
-  border: 1.5px solid rgba(245, 158, 11, 0.5);
-  box-shadow: 0 0 16px rgba(245, 158, 11, 0.25);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  animation: glowPulse 2.8s infinite alternate ease-in-out;
-  text-align: center;
-}
-
-.ribbon-sparkle {
-  font-size: 12px;
-  animation: spinSlow 6s linear infinite;
-}
-
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.splash-badge-ribbon, .splash-heritage-pill {
+  display: none !important;
 }
 
 .splash-brand {
-  margin-top: 4px;
+  margin-top: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .splash-title {
@@ -459,26 +400,7 @@ body {
   filter: drop-shadow(0 4px 18px rgba(239, 75, 63, 0.55)) drop-shadow(0 0 30px rgba(245, 158, 11, 0.45));
   letter-spacing: 0.5px;
   margin: 0;
-}
-
-.splash-heritage-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 6px;
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #FFD29D;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 3px 12px;
-  border-radius: 12px;
-  border: 1px dashed rgba(255, 210, 157, 0.45);
-  letter-spacing: 0.05em;
-}
-
-.splash-heritage-pill .sep {
-  opacity: 0.5;
-  color: #fff;
+  text-align: center;
 }
 
 .splash-subtitle {
@@ -3031,22 +2953,8 @@ body {
     font-size: 16px;
   }
 
-  .splash-badge-ribbon {
-    font-size: 9.5px;
-    letter-spacing: 0.04em;
-    padding: 3px 10px;
-    max-width: 90vw;
-  }
-
   .splash-title {
     font-size: 36px;
-  }
-
-  .splash-heritage-pill {
-    font-size: 9.5px;
-    padding: 2px 8px;
-    gap: 4px;
-    margin-top: 4px;
   }
 
   .splash-subtitle {

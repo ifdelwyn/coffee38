@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>HBcoffee - Tiệm Cà Phê Vỉa Hè Sài Gòn</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5.5">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="app">
+    <!-- MÀN HÌNH CHÀO MỪNG / TRANG CHỦ NGHỆ THUẬT (HOME VIEW ĐA SẮC MÀU & SINH ĐỘNG) -->
+    <div id="splash-screen">
+      <!-- CÁC LỚP ÁNH SÁNG MESH HOÀNG HÔN SÀI GÒN & ĐÈN PHỐ LUNG LINH -->
+      <div class="splash-ambient-mesh">
+        <div class="mesh-orb orb-amber"></div>
+        <div class="mesh-orb orb-ruby"></div>
+        <div class="mesh-orb orb-emerald"></div>
+      </div>
+
+      <!-- DÀN ĐÈN LỒNG PHỐ VỈA HÈ LUNG LINH ĐA SẮC MÀU TRÀN MÀN HÌNH -->
+      <div class="street-lanterns-bar">
+        <span class="lantern red" title="Đèn lồng đỏ may mắn">🏮</span>
+        <span class="lantern yellow" title="Đèn lồng vàng cúc">🏮</span>
+        <span class="lantern green" title="Đèn lồng xanh ngọc">🏮</span>
+        <span class="lantern pink" title="Đèn lồng hoa sen">🏮</span>
+        <span class="lantern orange" title="Đèn lồng cam đào">🏮</span>
+        <span class="lantern red" title="Đèn lồng đỏ may mắn">🏮</span>
+        <span class="lantern yellow" title="Đèn lồng vàng cúc">🏮</span>
+        <span class="lantern green" title="Đèn lồng xanh ngọc">🏮</span>
+        <span class="lantern pink" title="Đèn lồng hoa sen">🏮</span>
+      </div>
+
+      <!-- HẠT BỤI NẮNG, HOA GIẤY & HƯƠNG CÀ PHÊ BAY LƠ LỬNG -->
+      <div class="splash-particles">
+        <span class="p-item p1">🌸</span>
+        <span class="p-item p2">☕</span>
+        <span class="p-item p3">✨</span>
+        <span class="p-item p4">🍃</span>
+        <span class="p-item p5">⭐</span>
+        <span class="p-item p6">🌸</span>
+      </div>
+
+      <!-- TOP NAV BAR TRANG CHỦ -->
+      <div class="home-top-nav">
+        <div class="home-logo-mini">
+          <span class="home-logo-icon">☕</span>
+          <span class="home-logo-text">HBcoffee</span>
+        </div>
+        <div class="home-top-actions">
+          <button id="btn-home-music" class="icon-btn-round" title="Bật/Tắt Nhạc Lo-Fi">📻</button>
+          <button id="btn-home-fullscreen" class="icon-btn-round desktop-only-btn" title="Toàn màn hình">⛶</button>
+        </div>
+      </div>
+
+      <!-- VÙNG NỘI DUNG CUỘN TRANG CHỦ -->
+      <div class="home-scroll-body">
+        <div class="splash-badge-ribbon">
+          <span class="ribbon-sparkle">✨</span>
+          <span>TIỆM CÀ PHÊ VỈA HÈ SÀI GÒN • PHA PHIN ĐẬM ĐÀ</span>
+          <span class="ribbon-sparkle">✨</span>
+        </div>
+        
+        <div class="splash-brand">
+          <h1 class="splash-title">HBcoffee</h1>
+          <div class="splash-heritage-pill">
+            <span>☕ EST. 2026</span>
+            <span class="sep">•</span>
+            <span>PHỐ CÀ PHÊ SÀI GÒN</span>
+            <span class="sep">•</span>
+            <span>LO-FI CHILL</span>
+          </div>
+          <p class="splash-subtitle">Hương Vị Đậm Đà Bản Sắc • Góc Phố Bình Yên • Trọn Vị Yêu Thương</p>
+        </div>
+
+        <!-- LOGO TÁCH CÀ PHÊ 3D CHUYỂN ĐỘNG & BỐC KHÓI CÓ HÀO QUANG -->
+        <div class="cup-logo-stage">
+          <div class="cup-ambient-glow"></div>
+          <div class="steam-wrap">
+            <div class="steam-wisp"></div>
+            <div class="steam-wisp"></div>
+            <div class="steam-wisp"></div>
+            <div class="steam-wisp"></div>
+          </div>
+          <div class="coffee-cup-body">
+            <span class="cup-brand-heart">☕</span>
+          </div>
+          <div class="cup-saucer"></div>
+        </div>
+
+        <!-- BĂNG CHUYỀN GIỚI THIỆU CÁC MÓN TIÊU BIỂU TRONG MENU 48 MÓN -->
+        <div class="drink-highlight-chips">
+          <span class="chip-item chip-gold">☕ Cà Phê Muối Xứ Huế</span>
+          <span class="chip-item chip-green">🥑 Sinh Tố Bơ Đắk Lắk</span>
+          <span class="chip-item chip-emerald">🍵 Matcha Latte Đá</span>
+          <span class="chip-item chip-ruby">🍓 Trà Dâu Tây Tuyết</span>
+          <span class="chip-item chip-amber">🥚 Cà Phê Trứng Phố Cổ</span>
+        </div>
+
+        <!-- THÔNG SỐ QUÁN HIỆN TẠI (CARD THỦ CÔNG MÀU SẮC SANG TRỌNG) -->
+        <div class="splash-stats-preview">
+          <div class="splash-stat-item stat-money">
+            <small>💰 Tiền trong két</small>
+            <b id="splash-money">65k</b>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="splash-stat-item stat-rank">
+            <small>🏆 Cấp bậc tiệm</small>
+            <b id="splash-rank">TIỆM NHỎ</b>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="splash-stat-item stat-rating">
+            <small>⭐ Đánh giá khách</small>
+            <b id="splash-stars">4,8 ⭐</b>
+          </div>
+        </div>
+
+        <!-- CỤM NÚT THAO TÁC TRANG CHỦ ĐA SẮC MÀU & HIỆU ỨNG RỰC RỠ -->
+        <div class="home-action-group">
+          <button id="btn-enter-shop" class="enter-shop-btn">
+            <span class="btn-coffee-bounce">☕</span>
+            <span class="btn-main-txt">VÀO QUÁN CÀ PHÊ</span>
+            <span class="btn-shimmer-light"></span>
+          </button>
+          
+          <div class="home-secondary-btns">
+            <button id="btn-open-guide" class="home-sub-btn guide-btn">
+              <span>📖</span>
+              <span>Hướng Dẫn Chơi</span>
+            </button>
+            <button id="btn-home-menu-board" class="home-sub-btn menu-btn">
+              <span>📜</span>
+              <span>Menu 48 Món</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ô KẾT NỐI VÀ GỬI ĐÁNH GIÁ (GỌN GÀNG ĐẶT Ở CUỐI TRANG THEO YÊU CẦU) -->
+        <div class="home-connect-compact">
+          <span class="home-connect-text">kết nối và gửi đánh giá cho mình</span>
+          <a href="https://www.instagram.com/_soft.w_" target="_blank" rel="noopener noreferrer" class="insta-gradient-tile" title="Instagram" aria-label="Mở Instagram">
+            <svg class="insta-svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANG RIÊNG: HƯỚNG DẪN CHƠI CHI TIẾT (GUIDE SCREEN) -->
+    <div id="guide-screen" class="guide-screen-view" hidden>
+      <!-- TOP BAR HƯỚNG DẪN -->
+      <div class="guide-top-bar">
+        <button id="btn-guide-back" class="guide-back-btn">
+          <span>⬅</span>
+          <span>Trang Chủ</span>
+        </button>
+        <h2 class="guide-page-title">📖 CẨM NANG BÁN HÀNG</h2>
+        <button id="btn-guide-menu" class="hamburger-btn" title="Menu điều hướng (3 gạch)" aria-label="Menu chuyển trang">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+      <!-- NỘI DUNG CUỘN HƯỚNG DẪN -->
+      <div class="guide-scroll-container">
+        <!-- HERO BANNER -->
+        <div class="guide-hero-banner">
+          <div class="guide-hero-badge">CẨM NANG PHA CHẾ & KINH DOANH VỈA HÈ</div>
+          <h3>Làm Giàu Từ Tiệm Cà Phê Nhỏ HBcoffee</h3>
+          <p>Trải nghiệm chân thực không khí cà phê vỉa hè Sài Gòn, phục vụ thực khách với 48 loại thức uống đặc sắc và ứng phó với 24 sự cố đường phố kịch tính!</p>
+        </div>
+
+        <!-- BƯỚC 1, 2, 3: QUY TRÌNH BÁN HÀNG CƠ BẢN -->
+        <div class="guide-section-card">
+          <h4 class="guide-section-header">☕ 1. QUY TRÌNH 3 BƯỚC PHỤC VỤ KHÁCH HÀNG</h4>
+          <div class="guide-steps-grid">
+            <div class="guide-step-item">
+              <div class="step-num-badge">1</div>
+              <div class="step-icon">👀</div>
+              <div class="step-title">Xem Món Khách Gọi</div>
+              <div class="step-desc">Khách ghé ngồi bàn kèm tên món, công thức nguyên liệu và thanh vòng tròn đo thời gian kiên nhẫn.</div>
+            </div>
+            <div class="guide-step-item">
+              <div class="step-num-badge">2</div>
+              <div class="step-icon">🧊</div>
+              <div class="step-title">Chạm Nguyên Liệu</div>
+              <div class="step-desc">Chạm đúng các loại nguyên liệu ở khay phía dưới (sữa đặc, cà phê, đá, kem muối...) để rót vào ly 3D đa tầng.</div>
+            </div>
+            <div class="guide-step-item">
+              <div class="step-num-badge">3</div>
+              <div class="step-icon">⚡</div>
+              <div class="step-title">Bấm GIAO Nhanh</div>
+              <div class="step-desc">Bấm nút GIAO (hoặc phím Space / bấm trực tiếp vào khách) để nhận tiền xu và đánh giá 5 sao ⭐!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MẸO ĐẠT 5 SAO & ĐÁNH GIÁ -->
+        <div class="guide-section-card">
+          <h4 class="guide-section-header">⭐ 2. BÍ QUYẾT GIỮ VỮNG ĐÁNH GIÁ 5 SAO</h4>
+          <ul class="guide-tips-list">
+            <li><strong>Tốc độ là vàng:</strong> Giao đồ uống khi thanh kiên nhẫn còn xanh (>50%) để nhận ngay đánh giá 5 sao và tiền boa thêm.</li>
+            <li><strong>Tránh để khách bỏ về:</strong> Nếu thanh kiên nhẫn cạn kiệt, khách sẽ bực tức đứng dậy bỏ về, đánh giá 1 sao và trừ điểm tiệm!</li>
+            <li><strong>Nâng cấp hỗ trợ:</strong> Mua Quạt hơi nước (+30% kiên nhẫn) và Wi-Fi (+20% kiên nhẫn) trong tab <em>⭐ Nâng cấp</em> để khách ngồi chờ lâu hơn.</li>
+            <li><strong>Nhập kho đúng lúc:</strong> Đừng để hết nguyên liệu giữa chừng. Bấm tab <em>📦 Nhập hàng</em> để mua thêm nguyên liệu với giá sỉ.</li>
+          </ul>
+        </div>
+
+        <!-- MỞ KHÓA TOÀN BỘ 48 MÓN -->
+        <div class="guide-section-card">
+          <h4 class="guide-section-header">🔓 3. CÁCH MỞ KHÓA TRỌN BỘ 48 MÓN MENU</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:10px;">Bạn có thể mở khóa toàn bộ 48 món và 21 nguyên liệu bất cứ lúc nào:</p>
+          <div class="guide-unlock-box">
+            <div>
+              <div style="font-weight:700;font-size:13.5px;color:#88D49E;">Bấm nút Mở Khóa trên Bảng Menu hoặc phím U</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-top:2px;">Tự động cấp tối thiểu 10 đơn vị cho cả 21 nguyên liệu, khách sẽ gọi đủ 48 món đa dạng!</div>
+            </div>
+            <button id="btn-guide-unlock-all" class="guide-inline-unlock-btn">🔓 Mở Khóa Ngay</button>
+          </div>
+        </div>
+
+        <!-- XỬ LÝ 24 SỰ CỐ VỈA HÈ -->
+        <div class="guide-section-card">
+          <h4 class="guide-section-header">🎭 4. CẨM NANG XỬ LÝ 24 SỰ CỐ ĐƯỜNG PHỐ</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:12px;">Cứ 2 đến 3 phút một lần, các sự cố kịch tính đặc trưng vỉa hè Sài Gòn sẽ xảy ra. Mỗi quyết định của bạn sẽ tạo ra kết quả bất ngờ:</p>
+          <div class="guide-incidents-mini-grid">
+            <div class="guide-inc-item">
+              <span class="inc-badge">👮 Trật tự đô thị</span>
+              <p>Bê bàn ghế chạy thục mạng hoặc kê gọn sát vách để không bị nộp phạt 30k.</p>
+            </div>
+            <div class="guide-inc-item">
+              <span class="inc-badge">💻 Coder xóa Database</span>
+              <p>Pha ly cà phê muối gấp đôi cafein cứu mạng anh Đức nhận tiền tip 30k!</p>
+            </div>
+            <div class="guide-inc-item">
+              <span class="inc-badge">🐱 Cô Hà tìm mèo mướp</span>
+              <p>Dụ mèo trên mái hiên bằng đĩa cá khô để cô Hà mua ủng hộ 4 ly cà phê.</p>
+            </div>
+            <div class="guide-inc-item">
+              <span class="inc-badge">🎸 Nhạc Acoustic vỉa hè</span>
+              <p>Mời Quang Huy gảy đàn giao lưu để thu hút khách đi đường đông nghịt.</p>
+            </div>
+            <div class="guide-inc-item">
+              <span class="inc-badge">🎫 Vé số may mắn</span>
+              <p>Mua ủng hộ bà cụ vé số dạo, chiều bất ngờ trúng giải khuyến khích 80k!</p>
+            </div>
+            <div class="guide-inc-item">
+              <span class="inc-badge">🌍 Khách Tây đi lạc</span>
+              <p>Chỉ đường và mời uống cà phê trứng nhận ngay tiền tip hào phóng 70k!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHÍM TẮT MÁY TÍNH -->
+        <div class="guide-section-card">
+          <h4 class="guide-section-header">⌨️ 5. BẢNG PHÍM TẮT DÀNH CHO LAPTOP / PC</h4>
+          <div class="guide-kbd-grid">
+            <div class="kbd-row"><kbd>Space</kbd> <span>Giao nước nhanh cho khách</span></div>
+            <div class="kbd-row"><kbd>C</kbd> <span>Đổ ly làm lại (Clear Cup)</span></div>
+            <div class="kbd-row"><kbd>M</kbd> <span>Mở Bảng Menu 48 món</span></div>
+            <div class="kbd-row"><kbd>R</kbd> <span>Xem Nhật ký đánh giá</span></div>
+            <div class="kbd-row"><kbd>P</kbd> <span>Tạm dừng / Tiếp tục bán hàng</span></div>
+            <div class="kbd-row"><kbd>U</kbd> <span>Mở khóa toàn bộ menu ngay lập tức</span></div>
+            <div class="kbd-row"><kbd>Esc</kbd> <span>Đóng các cửa sổ hộp thoại</span></div>
+          </div>
+        </div>
+
+        <!-- CHÍNH SÁCH VAY VỐN KINH DOANH -->
+        <div class="guide-section-card">
+          <h4 class="guide-section-header">💳 6. CHÍNH SÁCH VAY VỐN KINH DOANH (VCB)</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:10px;">Khi két tiền bị âm hoặc thiếu vốn nhập nguyên liệu, bạn có thể vay vốn kinh doanh từ 2 nguồn:</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.35);padding:10px 12px;border-radius:12px;">
+              <div style="font-weight:700;font-size:13px;color:#6EE7B7;">🏛 Vay Ngân Hàng (Vietcombank): Lãi VCB + 0.05% = 4.85%/ngày</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-top:2px;">Khoản vay chính thống từ Vietcombank, lãi suất thấp nhất. Thích hợp cho kế hoạch kinh doanh ổn định lâu dài.</div>
+            </div>
+            <div style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.35);padding:10px 12px;border-radius:12px;">
+              <div style="font-weight:700;font-size:13px;color:#FCD34D;">🤝 Vay Từ Cá Nhân (Vốn Tư Nhân Vỉa Hè): Lãi VCB + 1.25% = 6.05%/ngày</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.85);margin-top:2px;">Thủ tục cấp tốc, giải ngân tức thì khi kẹt tiền gấp. Mẹo tài chính: Nên ưu tiên trả nợ cá nhân trước để giảm lãi cao!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HỘP KẾT NỐI VÀ GỬI ĐÁNH GIÁ (GỌN GÀNG) -->
+        <div class="home-connect-compact in-guide">
+          <span class="home-connect-text">kết nối và gửi đánh giá cho mình</span>
+          <a href="https://www.instagram.com/_soft.w_" target="_blank" rel="noopener noreferrer" class="insta-gradient-tile" title="Instagram" aria-label="Mở Instagram">
+            <svg class="insta-svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+
+        <!-- FOOTER ACTIONS -->
+        <div class="guide-footer-actions">
+          <button id="btn-guide-back-home" class="guide-btn-secondary">⬅ Quay Lại Trang Chủ</button>
+          <button id="btn-guide-play" class="guide-btn-primary">☕ Bắt Đầu Bán Hàng Ngay!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRAWER MENU 3 GẠCH (NAVIGATION DRAWER) -->
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+    <aside id="drawer-nav" class="drawer-nav" aria-label="Menu điều hướng chuyển trang">
+      <div class="drawer-header">
+        <div class="drawer-brand">
+          <span class="drawer-logo">☕</span>
+          <div>
+            <div class="drawer-title">HBcoffee</div>
+            <small class="drawer-subtitle">Tiệm Cà Phê Vỉa Hè Sài Gòn</small>
+          </div>
+        </div>
+        <button id="btn-drawer-close" class="drawer-close-btn" title="Đóng menu (✕)">✕</button>
+      </div>
+
+      <nav class="drawer-nav-list">
+        <button class="drawer-link-btn" data-action="home">
+          <span class="d-icon">🏠</span>
+          <span class="d-text">Trang Chủ HBcoffee</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="game">
+          <span class="d-icon">☕</span>
+          <span class="d-text">Vào Quán Bán Hàng</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="guide">
+          <span class="d-icon">📖</span>
+          <span class="d-text">Hướng Dẫn Chơi Chi Tiết</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="menu">
+          <span class="d-icon">📜</span>
+          <span class="d-text">Bảng Thực Đơn 48 Món</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="reviews">
+          <span class="d-icon">⭐</span>
+          <span class="d-text">Nhật Ký Đánh Giá Của Khách</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="restock">
+          <span class="d-icon">📦</span>
+          <span class="d-text">Nhập Nguyên Liệu Kho</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="upgrade">
+          <span class="d-icon">✨</span>
+          <span class="d-text">Nâng Cấp Quán Cà Phê</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="edit_name">
+          <span class="d-icon">🏷️</span>
+          <span class="d-text">Đổi Tên Quán</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="unlock">
+          <span class="d-icon">👑</span>
+          <span class="d-text">Mở Khóa Toàn Bộ Menu (48 món)</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="loan">
+          <span class="d-icon">🏛</span>
+          <span class="d-text">Vay Vốn Kinh Doanh (Ngân Hàng & Cá Nhân)</span>
+          <span class="d-arrow">›</span>
+        </button>
+        <button class="drawer-link-btn" data-action="profiles">
+          <span class="d-icon">👤</span>
+          <span class="d-text">Hồ Sơ Người Chơi (Tiến Trình Riêng)</span>
+          <span class="d-arrow">›</span>
+        </button>
+      </nav>
+
+      <!-- DRAWER INSTAGRAM BANNER -->
+      <div class="drawer-insta-card">
+        <span style="font-size:12px;color:rgba(255,255,255,0.9);display:block;margin-bottom:8px;font-weight:600;">kết nối và gửi đánh giá cho mình</span>
+        <a href="https://www.instagram.com/_soft.w_" target="_blank" rel="noopener noreferrer" class="insta-gradient-tile full-width" title="Instagram" aria-label="Mở Instagram">
+          <svg class="insta-svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+
+      <div class="drawer-footer">
+        <small>HBcoffee Version 5.2 • Made with ❤️</small>
+      </div>
+    </aside>
+
+    <!-- TOP BAR HUD (GIỐNG HỆT ẢNH GỐC + NÚT 3 GẠCH & NHẠC CHILL) -->
+    <header id="top">
+      <div id="day-progress-bar" class="day-progress-bar" title="Tiến trình 5 phút trong ngày"></div>
+      <div class="l">
+        <button id="btn-game-menu" class="icon-btn" title="Menu điều hướng (☰)">☰</button>
+        <button id="btn-pause" class="icon-btn" title="Tạm dừng (P)">||</button>
+        <button id="btn-music" class="icon-btn" title="Bật/Tắt Nhạc Lo-Fi">📻</button>
+        <button id="btn-fullscreen" class="icon-btn desktop-only-btn" title="Toàn màn hình (F11)">⛶</button>
+        <div>
+          <div id="day-label" class="day">Ngày 1</div>
+          <div id="time-label" class="sub">07:30</div>
+        </div>
+      </div>
+
+      <div class="money">
+        <small>KÉT</small>
+        <span id="money-val">65k</span>
+      </div>
+
+      <div class="r" id="hud-reviews-btn" title="Bấm xem nhật ký đánh giá của khách" style="cursor:pointer;">
+        <div id="stars-label" class="stars">★★★★★</div>
+        <div id="reviews-label" class="sub rev">4,8 • 18 đánh giá ↗</div>
+      </div>
+    </header>
+
+    <!-- MÁI HIÊN SỌC ĐẶC TRƯNG -->
+    <div class="awning"></div>
+
+    <!-- MAIN PLAYING VIEW -->
+    <main id="view">
+      <!-- PHỐ & BÀN KHÁCH VỈA HÈ -->
+      <section class="street">
+        <!-- NÚT BẢNG MENU GÓC (48+ MÓN ĐỒ UỐNG) -->
+        <button id="btn-corner-menu" class="corner-menu-btn" title="Mở bảng Menu 48+ món đồ uống">
+          <span class="menu-icon">📜</span>
+          <span class="menu-label">MENU</span>
+          <span class="menu-badge">48 món</span>
+        </button>
+
+        <!-- BẢNG HIỆU QUÁN HBcoffee -->
+        <div class="board">
+          <div id="board-name" class="board-name">HBcoffee</div>
+          <div id="board-rank" class="board-rank">TIỆM NHỎ</div>
+        </div>
+
+        <!-- BÀN GHẾ KHÁCH NGỒI (HIỆU ỨNG TILT 3D) -->
+        <div id="seats-grid" class="seats"></div>
+      </section>
+
+      <!-- KHU VỰC BẾP & CHIẾC LY THỦY TINH 3D ĐA TẦNG -->
+      <section class="kitchen">
+        <!-- KHAY PHA CHẾ 3D HIỆN TẠI -->
+        <div class="brew-bar">
+          <div class="cup-status">
+            <!-- 3D LAYERED GLASS CUP -->
+            <div class="cup-3d-wrapper">
+              <div id="glass-cup-3d" class="glass-cup-3d">
+                <div id="cup-layer-milk" class="layer-milk"></div>
+                <div id="cup-layer-coffee" class="layer-coffee"></div>
+                <div id="cup-layer-foam" class="layer-foam"></div>
+                <div class="ice-cube" id="ice-1"></div>
+                <div class="ice-cube" id="ice-2"></div>
+              </div>
+            </div>
+
+            <div class="cup-desc">
+              <span id="cup-drink-title" class="cup-drink-title">Ly đang trống</span>
+              <span id="cup-items-list" class="cup-items-list">Chạm nguyên liệu để thêm</span>
+            </div>
+          </div>
+          <div>
+            <button id="btn-serve" class="serve-action-btn">Giao đồ <span class="kbd-hint">Space</span></button>
+            <button id="btn-clear" class="clear-btn">Đổ ly <span class="kbd-hint">C</span></button>
+          </div>
+        </div>
+
+        <!-- LƯỚI 21 Ô NGUYÊN LIỆU (7 CỘT X 3 HÀNG) -->
+        <div id="trays-grid" class="trays"></div>
+      </section>
+    </main>
+
+    <!-- THANH MENU ĐIỀU HƯỚNG DƯỚI ĐÁY -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="play">
+        <span class="tab-icon">☕</span>
+        <span>Bán quán</span>
+      </button>
+      <button class="nav-tab" data-tab="menu">
+        <span class="tab-icon">📜</span>
+        <span>Menu 48+</span>
+      </button>
+      <button class="nav-tab" data-tab="restock">
+        <span class="tab-icon">📦</span>
+        <span>Nhập hàng</span>
+      </button>
+      <button class="nav-tab" data-tab="upgrade">
+        <span class="tab-icon">⭐</span>
+        <span>Nâng cấp</span>
+      </button>
+      <button class="nav-tab" data-tab="reviews">
+        <span class="tab-icon">💬</span>
+        <span>Đánh giá</span>
+      </button>
+      <button class="nav-tab" data-tab="edit_name">
+        <span class="tab-icon">🏷️</span>
+        <span>Đổi tên</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- POP-UP DIALOG SỰ KIỆN (CHUẨN 100% NHƯ TRONG ẢNH GỐC) -->
+  <div id="modal" hidden>
+    <div id="card" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <!-- TOAST THÔNG BÁO -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- SCRIPTS -->
+  <script src="audio.js?v=5.5"></script>
+  <script src="game.js?v=5.5"></script>
+  <script>
+    // Auto purge any stale Service Workers and browser caches
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (let r of regs) r.unregister();
+      });
+    }
+    if ('caches' in window) {
+      caches.keys().then(function(keys) {
+        for (let k of keys) caches.delete(k);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-  <title>HBcoffee - Tiệm Cà Phê Vỉa Hè Sài Gòn</title>
+  <title>HBcoffee - Tiệm Cà Phê Vỉa Hè</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5.6">
+  <link rel="stylesheet" href="style.css?v=5.7">
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <div id="app">
     <!-- MÀN HÌNH CHÀO MỪNG / TRANG CHỦ NGHỆ THUẬT (HOME VIEW ĐA SẮC MÀU & SINH ĐỘNG) -->
     <div id="splash-screen">
-      <!-- CÁC LỚP ÁNH SÁNG MESH HOÀNG HÔN SÀI GÒN & ĐÈN PHỐ LUNG LINH -->
+      <!-- CÁC LỚP ÁNH SÁNG MESH HOÀNG HÔN & ĐÈN PHỐ LUNG LINH -->
       <div class="splash-ambient-mesh">
         <div class="mesh-orb orb-amber"></div>
         <div class="mesh-orb orb-ruby"></div>
@@ -61,95 +61,97 @@
 
       <!-- VÙNG NỘI DUNG CUỘN TRANG CHỦ -->
       <div class="home-scroll-body">
-        <div class="splash-badge-ribbon">
-          <span class="ribbon-sparkle">✨</span>
-          <span>CÀ PHÊ VỈA HÈ SÀI GÒN • PHA PHIN ĐẬM ĐÀ</span>
-          <span class="ribbon-sparkle">✨</span>
-        </div>
-        
-        <div class="splash-brand">
-          <h1 class="splash-title">HBcoffee</h1>
-          <div class="splash-heritage-pill">
-            <span>☕ EST. 2026</span>
-            <span class="sep">•</span>
-            <span>PHỐ CÀ PHÊ SÀI GÒN</span>
-            <span class="sep">•</span>
-            <span>LO-FI CHILL</span>
+        <div class="home-scroll-inner">
+          <div class="splash-badge-ribbon">
+            <span class="ribbon-sparkle">✨</span>
+            <span>CÀ PHÊ VỈA HÈ • PHA PHIN ĐẬM ĐÀ</span>
+            <span class="ribbon-sparkle">✨</span>
           </div>
-          <p class="splash-subtitle">Hương Vị Đậm Đà Bản Sắc • Góc Phố Bình Yên • Trọn Vị Yêu Thương</p>
-        </div>
-
-        <!-- LOGO TÁCH CÀ PHÊ 3D CHUYỂN ĐỘNG & BỐC KHÓI CÓ HÀO QUANG -->
-        <div class="cup-logo-stage">
-          <div class="cup-ambient-glow"></div>
-          <div class="steam-wrap">
-            <div class="steam-wisp"></div>
-            <div class="steam-wisp"></div>
-            <div class="steam-wisp"></div>
-            <div class="steam-wisp"></div>
-          </div>
-          <div class="coffee-cup-body">
-            <span class="cup-brand-heart">☕</span>
-          </div>
-          <div class="cup-saucer"></div>
-        </div>
-
-        <!-- BĂNG CHUYỀN GIỚI THIỆU CÁC MÓN TIÊU BIỂU TRONG MENU 48 MÓN -->
-        <div class="drink-highlight-chips">
-          <span class="chip-item chip-gold">☕ Cà Phê Muối Xứ Huế</span>
-          <span class="chip-item chip-green">🥑 Sinh Tố Bơ Đắk Lắk</span>
-          <span class="chip-item chip-emerald">🍵 Matcha Latte Đá</span>
-          <span class="chip-item chip-ruby">🍓 Trà Dâu Tây Tuyết</span>
-          <span class="chip-item chip-amber">🥚 Cà Phê Trứng Phố Cổ</span>
-        </div>
-
-        <!-- THÔNG SỐ QUÁN HIỆN TẠI (CARD THỦ CÔNG MÀU SẮC SANG TRỌNG) -->
-        <div class="splash-stats-preview">
-          <div class="splash-stat-item stat-money">
-            <small>💰 Tiền trong két</small>
-            <b id="splash-money">65k</b>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="splash-stat-item stat-rank">
-            <small>🏆 Cấp bậc tiệm</small>
-            <b id="splash-rank">TIỆM NHỎ</b>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="splash-stat-item stat-rating">
-            <small>⭐ Đánh giá khách</small>
-            <b id="splash-stars">4,8 ⭐</b>
-          </div>
-        </div>
-
-        <!-- CỤM NÚT THAO TÁC TRANG CHỦ ĐA SẮC MÀU & HIỆU ỨNG RỰC RỠ -->
-        <div class="home-action-group">
-          <button id="btn-enter-shop" class="enter-shop-btn">
-            <span class="btn-coffee-bounce">☕</span>
-            <span class="btn-main-txt">VÀO QUÁN CÀ PHÊ</span>
-            <span class="btn-shimmer-light"></span>
-          </button>
           
-          <div class="home-secondary-btns">
-            <button id="btn-open-guide" class="home-sub-btn guide-btn">
-              <span>📖</span>
-              <span>Hướng Dẫn Chơi</span>
-            </button>
-            <button id="btn-home-menu-board" class="home-sub-btn menu-btn">
-              <span>📜</span>
-              <span>Menu 48 Món</span>
-            </button>
+          <div class="splash-brand">
+            <h1 class="splash-title">HBcoffee</h1>
+            <div class="splash-heritage-pill">
+              <span>☕ EST. 2026</span>
+              <span class="sep">•</span>
+              <span>PHỐ CÀ PHÊ VỈA HÈ</span>
+              <span class="sep">•</span>
+              <span>LO-FI CHILL</span>
+            </div>
+            <p class="splash-subtitle">Hương Vị Đậm Đà Bản Sắc • Góc Phố Bình Yên • Trọn Vị Yêu Thương</p>
           </div>
-        </div>
 
-        <!-- Ô KẾT NỐI VÀ GỬI ĐÁNH GIÁ (GỌN GÀNG ĐẶT Ở CUỐI TRANG THEO YÊU CẦU) -->
-        <div class="home-connect-compact">
-          <span class="home-connect-text">kết nối và gửi đánh giá cho mình</span>
-          <a href="https://www.instagram.com/_soft.w_" target="_blank" rel="noopener noreferrer" class="insta-gradient-tile" title="Instagram" aria-label="Mở Instagram">
-            <svg class="insta-svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            <span>Instagram</span>
-          </a>
+          <!-- LOGO TÁCH CÀ PHÊ 3D CHUYỂN ĐỘNG & BỐC KHÓI CÓ HÀO QUANG -->
+          <div class="cup-logo-stage">
+            <div class="cup-ambient-glow"></div>
+            <div class="steam-wrap">
+              <div class="steam-wisp"></div>
+              <div class="steam-wisp"></div>
+              <div class="steam-wisp"></div>
+              <div class="steam-wisp"></div>
+            </div>
+            <div class="coffee-cup-body">
+              <span class="cup-brand-heart">☕</span>
+            </div>
+            <div class="cup-saucer"></div>
+          </div>
+
+          <!-- BĂNG CHUYỀN GIỚI THIỆU CÁC MÓN TIÊU BIỂU TRONG MENU 48 MÓN -->
+          <div class="drink-highlight-chips">
+            <span class="chip-item chip-gold">☕ Cà Phê Muối Xứ Huế</span>
+            <span class="chip-item chip-green">🥑 Sinh Tố Bơ Đắk Lắk</span>
+            <span class="chip-item chip-emerald">🍵 Matcha Latte Đá</span>
+            <span class="chip-item chip-ruby">🍓 Trà Dâu Tây Tuyết</span>
+            <span class="chip-item chip-amber">🥚 Cà Phê Trứng Phố Cổ</span>
+          </div>
+
+          <!-- THÔNG SỐ QUÁN HIỆN TẠI (CARD THỦ CÔNG MÀU SẮC SANG TRỌNG) -->
+          <div class="splash-stats-preview">
+            <div class="splash-stat-item stat-money">
+              <small>💰 Tiền trong két</small>
+              <b id="splash-money">65k</b>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="splash-stat-item stat-rank">
+              <small>🏆 Cấp bậc tiệm</small>
+              <b id="splash-rank">TIỆM NHỎ</b>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="splash-stat-item stat-rating">
+              <small>⭐ Đánh giá khách</small>
+              <b id="splash-stars">4,8 ⭐</b>
+            </div>
+          </div>
+
+          <!-- CỤM NÚT THAO TÁC TRANG CHỦ ĐA SẮC MÀU & HIỆU ỨNG RỰC RỠ -->
+          <div class="home-action-group">
+            <button id="btn-enter-shop" class="enter-shop-btn">
+              <span class="btn-coffee-bounce">☕</span>
+              <span class="btn-main-txt">VÀO QUÁN CÀ PHÊ</span>
+              <span class="btn-shimmer-light"></span>
+            </button>
+            
+            <div class="home-secondary-btns">
+              <button id="btn-open-guide" class="home-sub-btn guide-btn">
+                <span>📖</span>
+                <span>Hướng Dẫn Chơi</span>
+              </button>
+              <button id="btn-home-menu-board" class="home-sub-btn menu-btn">
+                <span>📜</span>
+                <span>Menu 48 Món</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ô KẾT NỐI VÀ GỬI ĐÁNH GIÁ (GỌN GÀNG ĐẶT Ở CUỐI TRANG THEO YÊU CẦU) -->
+          <div class="home-connect-compact">
+            <span class="home-connect-text">kết nối và gửi đánh giá cho mình</span>
+            <a href="https://www.instagram.com/_soft.w_" target="_blank" rel="noopener noreferrer" class="insta-gradient-tile" title="Instagram" aria-label="Mở Instagram">
+              <svg class="insta-svg-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -176,7 +178,7 @@
         <div class="guide-hero-banner">
           <div class="guide-hero-badge">CẨM NANG PHA CHẾ & KINH DOANH VỈA HÈ</div>
           <h3>Làm Giàu Từ Tiệm Cà Phê Nhỏ HBcoffee</h3>
-          <p>Trải nghiệm chân thực không khí cà phê vỉa hè Sài Gòn, phục vụ thực khách với 48 loại thức uống đặc sắc và ứng phó với 24 sự cố đường phố kịch tính!</p>
+          <p>Trải nghiệm chân thực không khí cà phê vỉa hè, phục vụ thực khách với 48 loại thức uống đặc sắc và ứng phó với 24 sự cố đường phố kịch tính!</p>
         </div>
 
         <!-- BƯỚC 1, 2, 3: QUY TRÌNH BÁN HÀNG CƠ BẢN -->
@@ -231,7 +233,7 @@
         <!-- XỬ LÝ 24 SỰ CỐ VỈA HÈ -->
         <div class="guide-section-card">
           <h4 class="guide-section-header">🎭 4. CẨM NANG XỬ LÝ 24 SỰ CỐ ĐƯỜNG PHỐ</h4>
-          <p style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:12px;">Cứ 2 đến 3 phút một lần, các sự cố kịch tính đặc trưng vỉa hè Sài Gòn sẽ xảy ra. Mỗi quyết định của bạn sẽ tạo ra kết quả bất ngờ:</p>
+          <p style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:12px;">Cứ 2 đến 3 phút một lần, các sự cố kịch tính đặc trưng vỉa hè sẽ xảy ra. Mỗi quyết định của bạn sẽ tạo ra kết quả bất ngờ:</p>
           <div class="guide-incidents-mini-grid">
             <div class="guide-inc-item">
               <span class="inc-badge">👮 Trật tự đô thị</span>
@@ -317,7 +319,7 @@
           <span class="drawer-logo">☕</span>
           <div>
             <div class="drawer-title">HBcoffee</div>
-            <small class="drawer-subtitle">Tiệm Cà Phê Vỉa Hè Sài Gòn</small>
+            <small class="drawer-subtitle">Tiệm Cà Phê Vỉa Hè Hoài Niệm</small>
           </div>
         </div>
         <button id="btn-drawer-close" class="drawer-close-btn" title="Đóng menu (✕)">✕</button>
@@ -512,8 +514,8 @@
   <div id="toast" role="status" aria-live="polite"></div>
 
   <!-- SCRIPTS -->
-  <script src="audio.js?v=5.6"></script>
-  <script src="game.js?v=5.6"></script>
+  <script src="audio.js?v=5.7"></script>
+  <script src="game.js?v=5.7"></script>
   <script>
     // Auto purge any stale Service Workers and browser caches
     if ('serviceWorker' in navigator) {

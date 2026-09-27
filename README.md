@@ -1,6 +1,6 @@
-# ☕ HBcoffee - Tiệm Cà Phê Vỉa Hè Sài Gòn
+# ☕ HBcoffee - Tiệm Cà Phê Vỉa Hè
 
-Game mô phỏng kinh doanh & pha chế cà phê vỉa hè Sài Gòn phong cách Anime Hoài Niệm Lo-Fi.
+Game mô phỏng kinh doanh & pha chế cà phê vỉa hè phong cách Anime Hoài Niệm Lo-Fi.
 
 ## 🚀 Tính Năng Chính
 - **Menu 48 món đồ uống** đa dạng phong phú chuẩn công thức (Cà phê phin, Cà phê đặc sản, Trà trái cây, Trà sữa, Đá xay...).

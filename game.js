@@ -32,7 +32,7 @@ const RECIPES = [
   // 1. CÀ PHÊ PHIN TRUYỀN THỐNG (8 món)
   { id: "den_da",         n: "Cà phê đen đá",                 price: 15000, ings: ["cafe_den", "da_vien"], cat: "cafe_phin", desc: "Đậm đà vị cà phê phin Robusta truyền thống" },
   { id: "den_nong",       n: "Cà phê đen nóng",               price: 15000, ings: ["cafe_den"], cat: "cafe_phin", desc: "Hương thơm nồng nàn, tỉnh táo buổi sáng" },
-  { id: "sua_da",         n: "Cà phê sữa đá Sài Gòn",         price: 20000, ings: ["cafe_den", "sua_dac", "da_vien"], cat: "cafe_phin", desc: "Biểu tượng thức uống vỉa hè Sài Gòn" },
+  { id: "sua_da",         n: "Cà phê sữa đá truyền thống",    price: 20000, ings: ["cafe_den", "sua_dac", "da_vien"], cat: "cafe_phin", desc: "Biểu tượng thức uống vỉa hè đậm đà" },
   { id: "sua_nong",       n: "Cà phê sữa nóng",               price: 20000, ings: ["cafe_den", "sua_dac"], cat: "cafe_phin", desc: "Ấm bụng ngày mưa se lạnh" },
   { id: "bac_xiu",        n: "Bạc xỉu 3 tầng đá",              price: 25000, ings: ["sua_dac", "sua_tuoi", "cafe_den", "da_vien"], cat: "cafe_phin", desc: "Nhiều sữa ít cà phê, 3 tầng bắt mắt" },
   { id: "bac_xiu_nong",   n: "Bạc xỉu nóng",                  price: 25000, ings: ["sua_dac", "sua_tuoi", "cafe_den"], cat: "cafe_phin", desc: "Ngọt thơm vị sữa cùng thoang thoảng cà phê" },
@@ -78,7 +78,7 @@ const RECIPES = [
   { id: "matcha_kem_trung",n: "Matcha kem trứng béo ngậy",   price: 36000, ings: ["matcha", "sua_tuoi", "kem_trung", "da_vien"], cat: "matcha_cacao", desc: "Sự kết hợp hoàn hảo giữa trà xanh và trứng" },
   { id: "matcha_cot_dua", n: "Matcha cốt dừa non",           price: 35000, ings: ["matcha", "nuoc_dua", "sua_dac", "da_vien"], cat: "matcha_cacao", desc: "Thơm lừng nước cốt dừa ngậy béo" },
   { id: "matcha_tc",      n: "Matcha trân châu đường phèn",  price: 35000, ings: ["matcha", "sua_tuoi", "tran_chau", "da_vien"], cat: "matcha_cacao", desc: "Topping trân châu dai dai cùng matcha thơm" },
-  { id: "cacao_da",       n: "Cacao dầm đá Sài Gòn",         price: 25000, ings: ["cacao", "sua_dac", "da_vien"], cat: "matcha_cacao", desc: "Món tủ tuổi thơ của giới học sinh, sinh viên" },
+  { id: "cacao_da",       n: "Cacao dầm đá tuyết",           price: 25000, ings: ["cacao", "sua_dac", "da_vien"], cat: "matcha_cacao", desc: "Món quà tuổi thơ của giới học sinh, sinh viên" },
   { id: "cacao_nong",     n: "Cacao nóng béo đậm đà",        price: 25000, ings: ["cacao", "sua_dac"], cat: "matcha_cacao", desc: "Thơm nồng ấm áp xua tan mệt mỏi" },
   { id: "cacao_kem_muoi", n: "Cacao Macchiato kem muối",     price: 32000, ings: ["cacao", "sua_tuoi", "kem_muoi", "da_vien"], cat: "matcha_cacao", desc: "Đắng dịu hòa tan cùng lớp kem muối béo" },
   { id: "cacao_kem_trung",n: "Cacao kem trứng phố cổ",       price: 35000, ings: ["cacao", "sua_dac", "kem_trung", "da_vien"], cat: "matcha_cacao", desc: "Hương vị nức tiếng thơm lừng béo ngậy" },
@@ -1228,7 +1228,7 @@ class GameEngine {
           style="width:90%;padding:8px 12px;border-radius:10px;border:1.5px solid var(--tile-line);font-family:inherit;font-size:13px;margin-bottom:8px;outline:none;">
 
         <textarea id="fb-user-comment" rows="3" placeholder="Viết vài dòng cảm nhận hoặc góp ý cho tiệm nhé..."
-          style="width:90%;padding:8px 12px;border-radius:10px;border:1.5px solid var(--tile-line);font-family:inherit;font-size:12.5px;outline:none;resize:none;">Game rất dễ thương và chân thực, cà phê vỉa hè Sài Gòn đỉnh nóc!</textarea>
+          style="width:90%;padding:8px 12px;border-radius:10px;border:1.5px solid var(--tile-line);font-family:inherit;font-size:12.5px;outline:none;resize:none;">Game rất dễ thương và chân thực, cà phê vỉa hè đỉnh nóc!</textarea>
       </div>
     `;
 
@@ -1513,7 +1513,7 @@ class GameEngine {
     let html = `
       <div class="menu-board-chalk">
         <h2 class="menu-chalk-title">📜 THỰC ĐƠN HBcoffee</h2>
-        <p class="menu-chalk-sub">Hương Vị Phố Phường Sài Gòn • 48 Loại Đồ Uống & Ăn Vặt</p>
+        <p class="menu-chalk-sub">Hương Vị Phố Phường Thân Thương • 48 Loại Đồ Uống & Ăn Vặt</p>
 
         <!-- NÚT MỞ KHÓA TOÀN BỘ 48 MÓN -->
         <div style="margin: 10px 0 14px; text-align: center;">

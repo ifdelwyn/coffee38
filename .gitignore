@@ -1,0 +1,9 @@
+# Logs
+*.log
+npm-debug.log*
+
+# Temp
+_build_ipa/
+node_modules/
+.DS_Store
+Thumbs.db

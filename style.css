@@ -26,8 +26,20 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  -webkit-user-select: none;
   margin: 0;
   padding: 0;
+}
+
+button, a, .tray-tile, .nav-tab, .icon-btn, .icon-btn-round {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  cursor: pointer;
+}
+
+button:active, .tray-tile:active, .nav-tab:active, .home-sub-btn:active, .enter-shop-btn:active, .icon-btn:active, .icon-btn-round:active {
+  transform: scale(0.96);
+  transition: transform 0.08s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 [hidden] {
@@ -1307,7 +1319,7 @@ body {
   background: transparent;
   border: none;
   color: #FFF;
-  padding: 11px 14px;
+  padding: 10px 14px;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1320,15 +1332,24 @@ body {
   width: 100%;
 }
 
-.drawer-link-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+.drawer-link-btn:hover, .drawer-link-btn:active {
+  background: rgba(255, 255, 255, 0.12);
   transform: translateX(4px);
 }
 
 .drawer-link-btn .d-icon {
-  font-size: 18px;
   width: 24px;
-  text-align: center;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.drawer-link-btn .d-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2px;
 }
 
 .drawer-link-btn .d-text {
@@ -1337,7 +1358,15 @@ body {
 
 .drawer-link-btn .d-arrow {
   color: rgba(255, 255, 255, 0.4);
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-link-btn .d-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2px;
 }
 
 .drawer-insta-card {
@@ -1768,12 +1797,22 @@ body {
   color: #fff;
   font-family: var(--fd);
   font-size: 13px;
-  padding: 8px 15px;
+  padding: 8px 14px;
   border-radius: 12px;
   border: none;
   cursor: pointer;
   box-shadow: 0 3px 0 #236B31, 0 4px 10px rgba(53, 145, 69, 0.3);
   transition: transform 0.08s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.serve-action-btn svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.2px;
 }
 
 .serve-action-btn:active {
@@ -1791,6 +1830,16 @@ body {
   font-weight: 700;
   cursor: pointer;
   margin-left: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.clear-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2px;
 }
 
 /* 7 COLUMNS X 3 ROWS INGREDIENTS GRID (.trays) */
@@ -1870,16 +1919,19 @@ body {
 
 /* BOTTOM NAVIGATION TABS */
 .nav-tabs {
-  background: #fff;
-  border-top: 1px solid var(--tile-line);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding: 6px 2px calc(6px + env(safe-area-inset-bottom, 6px));
-  gap: 2px;
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 6px));
+  gap: 4px;
   width: 100%;
   max-width: 540px;
   margin: 0 auto;
   box-sizing: border-box;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .nav-tab {
@@ -1890,57 +1942,89 @@ body {
   align-items: center;
   justify-content: center;
   font-family: inherit;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 700;
-  color: var(--ink2);
+  color: #7A6860;
   cursor: pointer;
-  gap: 2px;
-  padding: 4px 0;
+  gap: 3px;
+  padding: 5px 0 4px;
   white-space: nowrap;
+  position: relative;
+  border-radius: 10px;
+  transition: color 0.15s ease;
 }
 
 .nav-tab.active {
   color: var(--chili);
 }
 
+.nav-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 18px;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--chili);
+  box-shadow: 0 1px 4px rgba(239, 75, 63, 0.35);
+}
+
 .nav-tab .tab-icon {
-  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-tab.active .tab-icon {
+  transform: translateY(-2px);
+}
+
+.nav-tab svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2px;
 }
 
 /* ==========================================================================
    POP-UP DRAMA DIALOG (#modal & #card - MATCHING SCREENSHOT)
    ========================================================================== */
 #modal {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(40, 16, 20, 0.68);
-  backdrop-filter: blur(5px);
-  z-index: 100;
+  background: rgba(20, 8, 12, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 900;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 14px;
+  box-sizing: border-box;
 }
 
 #card {
   width: 100%;
-  max-width: 360px;
-  max-height: 94%;
-  overflow: auto;
+  max-width: 440px;
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
   overscroll-behavior: contain;
-  background: var(--paper);
-  border-radius: 26px;
+  background: #ffffff;
+  border-radius: 24px;
   padding: 22px 18px 18px;
   text-align: center;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
-  animation: pop .22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  animation: modalSlideUp 0.24s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
 }
 
-@keyframes pop {
-  from { transform: scale(0.88); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+@keyframes modalSlideUp {
+  from { transform: translateY(24px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 .drama {
@@ -2126,6 +2210,15 @@ body {
 
 .corner-menu-btn .menu-icon {
   font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.corner-menu-btn .menu-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2px;
 }
 
 .corner-menu-btn .menu-label {

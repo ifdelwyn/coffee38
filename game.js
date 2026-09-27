@@ -312,6 +312,11 @@ class GameEngine {
     }
     snd.playServeSuccess();
     snd.playCoin();
+    if (window.confetti) {
+      try {
+        confetti({ particleCount: 50, spread: 70, origin: { y: 0.5 } });
+      } catch (e) {}
+    }
     this.showToast("🎉 ĐÃ MỞ KHÓA TOÀN BỘ 48 MÓN TRONG MENU!");
     this.renderTrays();
     this.renderHeader();
@@ -778,6 +783,15 @@ class GameEngine {
   endCurrentDay() {
     this.paused = true;
     snd.playServeSuccess();
+    if (window.confetti) {
+      try {
+        confetti({
+          particleCount: 55,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      } catch (e) {}
+    }
 
     const prevDay = this.day;
     const cleaningFee = 25000;
@@ -1138,6 +1152,15 @@ class GameEngine {
 
     snd.playServeSuccess();
     snd.playCoin();
+    if (window.confetti && ratingScore >= 4.5) {
+      try {
+        confetti({
+          particleCount: 28,
+          spread: 55,
+          origin: { y: 0.72 }
+        });
+      } catch (e) {}
+    }
     this.showToast(`+${(earned/1000)}k! ${seat.customer.name} đánh giá ${ratingScore.toFixed(1).replace(".", ",")} ⭐`);
 
     seat.customer = null;
@@ -1156,7 +1179,12 @@ class GameEngine {
       dBackdrop.hidden = false;
       setTimeout(() => dBackdrop.classList.add("active"), 10);
     }
-    if (dNav) dNav.classList.add("open");
+    if (dNav) {
+      dNav.classList.add("open");
+      if (window.lucide) {
+        setTimeout(() => lucide.createIcons(), 10);
+      }
+    }
   }
 
   closeDrawer() {
@@ -1180,6 +1208,9 @@ class GameEngine {
       this.dom.splash.classList.remove("fade-out");
     }
     this.renderHeader();
+    if (window.lucide) {
+      setTimeout(() => lucide.createIcons(), 20);
+    }
   }
 
   goToGuide() {
@@ -1189,6 +1220,9 @@ class GameEngine {
     const guide = document.getElementById("guide-screen");
     if (guide) guide.hidden = false;
     snd.playClick();
+    if (window.lucide) {
+      setTimeout(() => lucide.createIcons(), 20);
+    }
   }
 
   goToGame() {
@@ -1206,6 +1240,9 @@ class GameEngine {
     }
     this.resetActiveTab();
     this.paused = false;
+    if (window.lucide) {
+      setTimeout(() => lucide.createIcons(), 20);
+    }
   }
 
   openUserFeedbackModal() {
@@ -1257,6 +1294,15 @@ class GameEngine {
 
             snd.playServeSuccess();
             snd.playCoin();
+            if (window.confetti) {
+              try {
+                confetti({
+                  particleCount: 40,
+                  spread: 60,
+                  origin: { y: 0.6 }
+                });
+              } catch (e) {}
+            }
             this.showToast(`🎉 Cảm ơn bạn ${name} đã đánh giá ${selectedStars}⭐ và ủng hộ @_soft.w_!`);
             this.renderHeader();
             this.save();
@@ -1473,6 +1519,11 @@ class GameEngine {
     document.getElementById("btn-pause").onclick = () => {
       this.paused = !this.paused;
       snd.playClick();
+      const pBtn = document.getElementById("btn-pause");
+      if (pBtn) {
+        pBtn.innerHTML = this.paused ? '<i data-lucide="play" class="w-3.5 h-3.5"></i>' : '<i data-lucide="pause" class="w-3.5 h-3.5"></i>';
+        if (window.lucide) lucide.createIcons();
+      }
       this.showToast(this.paused ? "Đã tạm dừng quán" : "Tiếp tục bán hàng");
     };
 
@@ -1902,6 +1953,10 @@ class GameEngine {
       </div>
     `;
     this.dom.modal.hidden = false;
+
+    if (window.lucide) {
+      setTimeout(() => lucide.createIcons(), 10);
+    }
 
     if (lockTime > 0) {
       this.dom.card.classList.add("lock");

@@ -9,9 +9,32 @@
   <meta http-equiv="Expires" content="0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5.7">
+  <link rel="stylesheet" href="style.css?v=6.0">
   <link rel="manifest" href="manifest.json">
+  <!-- THƯ VIỆN UI CHUYÊN NGHIỆP: TAILWIND CSS + LUCIDE ICONS + CANVAS CONFETTI -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#4A1E29',
+            night2: '#38151E',
+            tile: '#FFF3F0',
+            chili: '#EF4B3F',
+            egg: '#F7C948',
+            leaf: '#4F9A48',
+          },
+          fontFamily: {
+            fd: ['Fraunces', 'serif'],
+            fb: ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
 <body>
   <div id="app">
@@ -54,8 +77,8 @@
           <span class="home-logo-text">HBcoffee</span>
         </div>
         <div class="home-top-actions">
-          <button id="btn-home-music" class="icon-btn-round" title="Bật/Tắt Nhạc Lo-Fi">📻</button>
-          <button id="btn-home-fullscreen" class="icon-btn-round desktop-only-btn" title="Toàn màn hình">⛶</button>
+          <button id="btn-home-music" class="icon-btn-round" title="Bật/Tắt Nhạc Lo-Fi" aria-label="Bật tắt nhạc"><i data-lucide="radio" class="w-4 h-4"></i></button>
+          <button id="btn-home-fullscreen" class="icon-btn-round desktop-only-btn" title="Toàn màn hình" aria-label="Toàn màn hình"><i data-lucide="maximize" class="w-4 h-4"></i></button>
         </div>
       </div>
 
@@ -132,11 +155,11 @@
             
             <div class="home-secondary-btns">
               <button id="btn-open-guide" class="home-sub-btn guide-btn">
-                <span>📖</span>
+                <span><i data-lucide="book-open" class="w-4 h-4 inline-block mr-1"></i></span>
                 <span>Hướng Dẫn Chơi</span>
               </button>
               <button id="btn-home-menu-board" class="home-sub-btn menu-btn">
-                <span>📜</span>
+                <span><i data-lucide="clipboard-list" class="w-4 h-4 inline-block mr-1"></i></span>
                 <span>Menu 48 Món</span>
               </button>
             </div>
@@ -161,14 +184,12 @@
       <!-- TOP BAR HƯỚNG DẪN -->
       <div class="guide-top-bar">
         <button id="btn-guide-back" class="guide-back-btn">
-          <span>⬅</span>
+          <span><i data-lucide="arrow-left" class="w-4 h-4 inline-block mr-1"></i></span>
           <span>Trang Chủ</span>
         </button>
         <h2 class="guide-page-title">📖 CẨM NANG BÁN HÀNG</h2>
-        <button id="btn-guide-menu" class="hamburger-btn" title="Menu điều hướng (3 gạch)" aria-label="Menu chuyển trang">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <button id="btn-guide-menu" class="icon-btn" title="Menu điều hướng" aria-label="Menu chuyển trang">
+          <i data-lucide="menu" class="w-4 h-4"></i>
         </button>
       </div>
 
@@ -322,64 +343,64 @@
             <small class="drawer-subtitle">Tiệm Cà Phê Vỉa Hè Hoài Niệm</small>
           </div>
         </div>
-        <button id="btn-drawer-close" class="drawer-close-btn" title="Đóng menu (✕)">✕</button>
+        <button id="btn-drawer-close" class="drawer-close-btn" title="Đóng menu" aria-label="Đóng menu"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
 
       <nav class="drawer-nav-list">
         <button class="drawer-link-btn" data-action="home">
-          <span class="d-icon">🏠</span>
+          <span class="d-icon"><i data-lucide="home" class="w-5 h-5"></i></span>
           <span class="d-text">Trang Chủ HBcoffee</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="game">
-          <span class="d-icon">☕</span>
+          <span class="d-icon"><i data-lucide="coffee" class="w-5 h-5"></i></span>
           <span class="d-text">Vào Quán Bán Hàng</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="guide">
-          <span class="d-icon">📖</span>
+          <span class="d-icon"><i data-lucide="book-open" class="w-5 h-5"></i></span>
           <span class="d-text">Hướng Dẫn Chơi Chi Tiết</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="menu">
-          <span class="d-icon">📜</span>
+          <span class="d-icon"><i data-lucide="clipboard-list" class="w-5 h-5"></i></span>
           <span class="d-text">Bảng Thực Đơn 48 Món</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="reviews">
-          <span class="d-icon">⭐</span>
+          <span class="d-icon"><i data-lucide="message-square" class="w-5 h-5"></i></span>
           <span class="d-text">Nhật Ký Đánh Giá Của Khách</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="restock">
-          <span class="d-icon">📦</span>
+          <span class="d-icon"><i data-lucide="package" class="w-5 h-5"></i></span>
           <span class="d-text">Nhập Nguyên Liệu Kho</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="upgrade">
-          <span class="d-icon">✨</span>
+          <span class="d-icon"><i data-lucide="sparkles" class="w-5 h-5"></i></span>
           <span class="d-text">Nâng Cấp Quán Cà Phê</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="edit_name">
-          <span class="d-icon">🏷️</span>
+          <span class="d-icon"><i data-lucide="pencil" class="w-5 h-5"></i></span>
           <span class="d-text">Đổi Tên Quán</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="unlock">
-          <span class="d-icon">👑</span>
+          <span class="d-icon"><i data-lucide="unlock" class="w-5 h-5"></i></span>
           <span class="d-text">Mở Khóa Toàn Bộ Menu (48 món)</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="loan">
-          <span class="d-icon">🏛</span>
+          <span class="d-icon"><i data-lucide="landmark" class="w-5 h-5"></i></span>
           <span class="d-text">Vay Vốn Kinh Doanh (Ngân Hàng & Cá Nhân)</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
         <button class="drawer-link-btn" data-action="profiles">
-          <span class="d-icon">👤</span>
+          <span class="d-icon"><i data-lucide="users" class="w-5 h-5"></i></span>
           <span class="d-text">Hồ Sơ Người Chơi (Tiến Trình Riêng)</span>
-          <span class="d-arrow">›</span>
+          <span class="d-arrow"><i data-lucide="chevron-right" class="w-4 h-4"></i></span>
         </button>
       </nav>
 
@@ -403,10 +424,10 @@
     <header id="top">
       <div id="day-progress-bar" class="day-progress-bar" title="Tiến trình 5 phút trong ngày"></div>
       <div class="l">
-        <button id="btn-game-menu" class="icon-btn" title="Menu điều hướng (☰)">☰</button>
-        <button id="btn-pause" class="icon-btn" title="Tạm dừng (P)">||</button>
-        <button id="btn-music" class="icon-btn" title="Bật/Tắt Nhạc Lo-Fi">📻</button>
-        <button id="btn-fullscreen" class="icon-btn desktop-only-btn" title="Toàn màn hình (F11)">⛶</button>
+        <button id="btn-game-menu" class="icon-btn" title="Menu điều hướng (☰)" aria-label="Menu điều hướng"><i data-lucide="menu" class="w-4 h-4"></i></button>
+        <button id="btn-pause" class="icon-btn" title="Tạm dừng (P)" aria-label="Tạm dừng"><i data-lucide="pause" class="w-3.5 h-3.5"></i></button>
+        <button id="btn-music" class="icon-btn" title="Bật/Tắt Nhạc Lo-Fi" aria-label="Bật tắt nhạc"><i data-lucide="radio" class="w-3.5 h-3.5"></i></button>
+        <button id="btn-fullscreen" class="icon-btn desktop-only-btn" title="Toàn màn hình (F11)" aria-label="Toàn màn hình"><i data-lucide="maximize" class="w-3.5 h-3.5"></i></button>
         <div>
           <div id="day-label" class="day">Ngày 1</div>
           <div id="time-label" class="sub">07:30</div>
@@ -433,7 +454,7 @@
       <section class="street">
         <!-- NÚT BẢNG MENU GÓC (48+ MÓN ĐỒ UỐNG) -->
         <button id="btn-corner-menu" class="corner-menu-btn" title="Mở bảng Menu 48+ món đồ uống">
-          <span class="menu-icon">📜</span>
+          <span class="menu-icon"><i data-lucide="book-open" class="w-3.5 h-3.5"></i></span>
           <span class="menu-label">MENU</span>
           <span class="menu-badge">48 món</span>
         </button>
@@ -470,8 +491,8 @@
             </div>
           </div>
           <div>
-            <button id="btn-serve" class="serve-action-btn">Giao đồ <span class="kbd-hint">Space</span></button>
-            <button id="btn-clear" class="clear-btn">Đổ ly <span class="kbd-hint">C</span></button>
+            <button id="btn-serve" class="serve-action-btn"><i data-lucide="check-circle" class="w-4 h-4"></i><span>Giao đồ</span> <span class="kbd-hint">Space</span></button>
+            <button id="btn-clear" class="clear-btn"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i><span>Đổ ly</span> <span class="kbd-hint">C</span></button>
           </div>
         </div>
 
@@ -483,23 +504,23 @@
     <!-- THANH MENU ĐIỀU HƯỚNG DƯỚI ĐÁY -->
     <nav class="nav-tabs">
       <button class="nav-tab active" data-tab="play">
-        <span class="tab-icon">☕</span>
+        <span class="tab-icon"><i data-lucide="coffee" class="w-5 h-5"></i></span>
         <span>Bán quán</span>
       </button>
       <button class="nav-tab" data-tab="menu">
-        <span class="tab-icon">📜</span>
+        <span class="tab-icon"><i data-lucide="book-open" class="w-5 h-5"></i></span>
         <span>Menu 48+</span>
       </button>
       <button class="nav-tab" data-tab="restock">
-        <span class="tab-icon">📦</span>
+        <span class="tab-icon"><i data-lucide="package" class="w-5 h-5"></i></span>
         <span>Nhập hàng</span>
       </button>
       <button class="nav-tab" data-tab="upgrade">
-        <span class="tab-icon">⭐</span>
+        <span class="tab-icon"><i data-lucide="sparkles" class="w-5 h-5"></i></span>
         <span>Nâng cấp</span>
       </button>
       <button class="nav-tab" data-tab="reviews">
-        <span class="tab-icon">💬</span>
+        <span class="tab-icon"><i data-lucide="message-square" class="w-5 h-5"></i></span>
         <span>Đánh giá</span>
       </button>
     </nav>
@@ -514,9 +535,13 @@
   <div id="toast" role="status" aria-live="polite"></div>
 
   <!-- SCRIPTS -->
-  <script src="audio.js?v=5.7"></script>
-  <script src="game.js?v=5.7"></script>
+  <script src="audio.js?v=6.0"></script>
+  <script src="game.js?v=6.0"></script>
   <script>
+    // Khởi tạo Lucide Icons ngay khi trang tải xong
+    if (window.lucide) {
+      lucide.createIcons();
+    }
     // Auto purge any stale Service Workers and browser caches
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(function(regs) {

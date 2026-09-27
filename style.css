@@ -100,6 +100,43 @@ body {
   display: none;
 }
 
+/* FLOATING MOBILE VERSION BADGE */
+.mobile-version-chip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30, 12, 18, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  color: #86EFAC;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.chip-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 10px #22C55E;
+  animation: pulseDot 1.4s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.75); }
+}
+
 /* ==========================================================================
    SPLASH / WELCOME SCREEN (CHÀO MỪNG ĐẾN VỚI HBCOFFEE)
    ========================================================================== */

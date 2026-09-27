@@ -9,7 +9,7 @@
   <meta http-equiv="Expires" content="0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="stylesheet" href="style.css?v=6.1">
   <link rel="manifest" href="manifest.json">
   <!-- THƯ VIỆN UI CHUYÊN NGHIỆP: TAILWIND CSS + LUCIDE ICONS + CANVAS CONFETTI -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -38,6 +38,12 @@
 </head>
 <body>
   <div id="app">
+    <!-- FLOATING MOBILE VERSION BADGE (HIỂN THỊ TRỰC TIẾP PHIÊN BẢN MỚI TRÊN MÀN HÌNH) -->
+    <div class="mobile-version-chip">
+      <span class="chip-pulse-dot"></span>
+      <span>Mobile Pro 6.1 • Live</span>
+    </div>
+
     <!-- MÀN HÌNH CHÀO MỪNG / TRANG CHỦ NGHỆ THUẬT (HOME VIEW ĐA SẮC MÀU & SINH ĐỘNG) -->
     <div id="splash-screen">
       <!-- CÁC LỚP ÁNH SÁNG MESH HOÀNG HÔN & ĐÈN PHỐ LUNG LINH -->
@@ -86,19 +92,20 @@
       <div class="home-scroll-body">
         <div class="home-scroll-inner">
           <div class="splash-badge-ribbon">
-            <span class="ribbon-sparkle">✨</span>
-            <span>CÀ PHÊ VỈA HÈ • PHA PHIN ĐẬM ĐÀ</span>
-            <span class="ribbon-sparkle">✨</span>
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+            <span>MOBILE PRO UI 6.1 • TAILWIND & LUCIDE</span>
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
           </div>
           
           <div class="splash-brand">
             <h1 class="splash-title">HBcoffee</h1>
             <div class="splash-heritage-pill">
-              <span>☕ EST. 2026</span>
+              <i data-lucide="coffee" class="w-3 h-3 text-amber-300"></i>
+              <span>EST. 2026</span>
               <span class="sep">•</span>
-              <span>PHỐ CÀ PHÊ VỈA HÈ</span>
+              <span>PHỐ VỈA HÈ</span>
               <span class="sep">•</span>
-              <span>LO-FI CHILL</span>
+              <span style="color:#4ade80;font-weight:800;">MOBILE EDITION</span>
             </div>
             <p class="splash-subtitle">Hương Vị Đậm Đà Bản Sắc • Góc Phố Bình Yên • Trọn Vị Yêu Thương</p>
           </div>
@@ -127,20 +134,20 @@
             <span class="chip-item chip-amber">🥚 Cà Phê Trứng Phố Cổ</span>
           </div>
 
-          <!-- THÔNG SỐ QUÁN HIỆN TẠI (CARD THỦ CÔNG MÀU SẮC SANG TRỌNG) -->
+          <!-- THÔNG SỐ QUÁN HIỆN TẠI (GLASSMORPHIC PRO CARD) -->
           <div class="splash-stats-preview">
             <div class="splash-stat-item stat-money">
-              <small>💰 Tiền trong két</small>
+              <small style="display:flex;align-items:center;gap:3px;justify-content:center;"><i data-lucide="coins" class="w-3.5 h-3.5 text-amber-400"></i> Tiền két</small>
               <b id="splash-money">65k</b>
             </div>
             <div class="stat-divider"></div>
             <div class="splash-stat-item stat-rank">
-              <small>🏆 Cấp bậc tiệm</small>
+              <small style="display:flex;align-items:center;gap:3px;justify-content:center;"><i data-lucide="trophy" class="w-3.5 h-3.5 text-orange-400"></i> Cấp quán</small>
               <b id="splash-rank">TIỆM NHỎ</b>
             </div>
             <div class="stat-divider"></div>
             <div class="splash-stat-item stat-rating">
-              <small>⭐ Đánh giá khách</small>
+              <small style="display:flex;align-items:center;gap:3px;justify-content:center;"><i data-lucide="star" class="w-3.5 h-3.5 text-emerald-400"></i> Đánh giá</small>
               <b id="splash-stars">4,8 ⭐</b>
             </div>
           </div>
@@ -148,8 +155,9 @@
           <!-- CỤM NÚT THAO TÁC TRANG CHỦ ĐA SẮC MÀU & HIỆU ỨNG RỰC RỠ -->
           <div class="home-action-group">
             <button id="btn-enter-shop" class="enter-shop-btn">
-              <span class="btn-coffee-bounce">☕</span>
-              <span class="btn-main-txt">VÀO QUÁN CÀ PHÊ</span>
+              <i data-lucide="coffee" class="w-5 h-5 btn-coffee-bounce"></i>
+              <span class="btn-main-txt">VÀO QUÁN BÁN HÀNG</span>
+              <i data-lucide="chevron-right" class="w-5 h-5 opacity-80"></i>
               <span class="btn-shimmer-light"></span>
             </button>
             
@@ -535,8 +543,8 @@
   <div id="toast" role="status" aria-live="polite"></div>
 
   <!-- SCRIPTS -->
-  <script src="audio.js?v=6.0"></script>
-  <script src="game.js?v=6.0"></script>
+  <script src="audio.js?v=6.1"></script>
+  <script src="game.js?v=6.1"></script>
   <script>
     // Khởi tạo Lucide Icons ngay khi trang tải xong
     if (window.lucide) {

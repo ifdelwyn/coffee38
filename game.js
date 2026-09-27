@@ -1942,7 +1942,9 @@ class GameEngine {
   }
 
   showModal({ content, choices, lockTime = 0 }) {
-    this.dom.card.innerHTML = content + `
+    this.dom.card.innerHTML = `
+      <div class="sheet-drag-pill" style="width:38px;height:4px;background:#D6CBC3;border-radius:99px;margin:0 auto 12px;opacity:0.8;"></div>
+    ` + content + `
       <div class="btns">
         ${choices.map((c, i) => `
           <button class="${i === 0 ? "pri" : ""}" data-idx="${i}">

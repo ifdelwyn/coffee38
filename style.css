@@ -36,10 +36,12 @@
 
 html, body {
   width: 100%;
+  max-width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  overflow-x: hidden !important;
   overscroll-behavior: none;
 }
 
@@ -52,11 +54,12 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  overflow-x: hidden !important;
 }
 
 #app {
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
   height: 100dvh;
   max-height: 100vh;
@@ -71,6 +74,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  overflow-x: hidden !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
@@ -180,7 +184,13 @@ body {
   justify-content: space-around;
   pointer-events: none;
   z-index: 4;
-  padding: 0 16px;
+  padding: 0 12px;
+}
+
+@media (max-width: 600px) {
+  .street-lanterns-bar .lantern:nth-child(n+6) {
+    display: none !important;
+  }
 }
 
 .street-lanterns-bar .lantern {
@@ -336,7 +346,9 @@ body {
 .splash-badge-ribbon {
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
+  max-width: 92vw;
+  box-sizing: border-box;
   color: #FFE699;
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(225, 29, 72, 0.25) 100%);
   padding: 5px 14px;
@@ -345,8 +357,10 @@ body {
   box-shadow: 0 0 16px rgba(245, 158, 11, 0.25);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   animation: glowPulse 2.8s infinite alternate ease-in-out;
+  text-align: center;
 }
 
 .ribbon-sparkle {
@@ -858,46 +872,6 @@ body {
 }
 
 /* ==========================================================================
-   HOME ACTION BUTTON GROUP
-   ========================================================================== */
-.home-action-group {
-  width: 100%;
-  max-width: 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-
-.home-secondary-btns {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-
-.home-sub-btn {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #fff;
-  padding: 11px 10px;
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 13px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: background 0.15s, transform 0.15s;
-}
-
-.home-sub-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-  transform: translateY(-1px);
-}
-
-/* ==========================================================================
    GUIDE SCREEN (TRANG RIÊNG: HƯỚNG DẪN CHƠI)
    ========================================================================== */
 .guide-screen-view {
@@ -1237,7 +1211,9 @@ body {
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   overflow-y: auto;
@@ -1245,6 +1221,8 @@ body {
 
 .drawer-nav.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .drawer-header {
@@ -1862,9 +1840,11 @@ body {
   background: #fff;
   border-top: 1px solid var(--tile-line);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 6px 4px 10px;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 6px 2px calc(6px + env(safe-area-inset-bottom, 6px));
   gap: 2px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-tab {
@@ -1873,12 +1853,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: inherit;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--ink2);
   cursor: pointer;
   gap: 2px;
+  padding: 4px 0;
+  white-space: nowrap;
 }
 
 .nav-tab.active {
@@ -1886,7 +1869,8 @@ body {
 }
 
 .nav-tab .tab-icon {
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1;
 }
 
 /* ==========================================================================
@@ -2370,8 +2354,8 @@ body {
    ========================================================================== */
 @media (min-width: 680px) and (max-width: 1024px) {
   #app {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
     height: 100dvh;
     max-height: 100vh;
@@ -2429,8 +2413,8 @@ body {
    ========================================================================== */
 @media (min-width: 1025px) {
   #app {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
     height: 100dvh;
     max-height: 100vh;
@@ -2863,6 +2847,319 @@ body {
 
 .loan-repay-btn.all {
   background: var(--chili);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN: MOBILE VIEWPORT (<= 500px - IPHONE, MESSENGER, CHROME)
+   ========================================================================== */
+@media (max-width: 500px) {
+  /* Splash screen mobile compact layout */
+  .home-top-nav {
+    padding: 8px 12px;
+  }
+
+  .home-logo-mini {
+    gap: 6px;
+  }
+
+  .home-logo-text {
+    font-size: 16px;
+  }
+
+  .splash-badge-ribbon {
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    padding: 3px 10px;
+    max-width: 90vw;
+  }
+
+  .splash-title {
+    font-size: 36px;
+  }
+
+  .splash-heritage-pill {
+    font-size: 9.5px;
+    padding: 2px 8px;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .splash-subtitle {
+    font-size: 11px;
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+
+  .cup-logo-stage {
+    width: 125px;
+    height: 105px;
+    margin: 2px auto;
+  }
+
+  .coffee-cup-body {
+    width: 72px;
+    height: 52px;
+    border-radius: 4px 4px 18px 18px;
+  }
+
+  .cup-brand-heart {
+    font-size: 18px;
+  }
+
+  .cup-saucer {
+    width: 92px;
+    height: 9px;
+  }
+
+  .steam-wrap {
+    width: 75px;
+    height: 55px;
+  }
+
+  .drink-highlight-chips {
+    max-width: 320px;
+    gap: 4px;
+    margin: 2px auto;
+  }
+
+  .chip-item {
+    font-size: 9.5px;
+    padding: 3px 7px;
+    border-radius: 9px;
+  }
+
+  .splash-stats-preview {
+    padding: 6px 10px;
+    max-width: 320px;
+    border-radius: 14px;
+    gap: 6px;
+  }
+
+  .splash-stat-item small {
+    font-size: 9px;
+  }
+
+  .splash-stat-item b {
+    font-size: 13.5px;
+  }
+
+  .stat-divider {
+    height: 20px;
+  }
+
+  .home-scroll-body {
+    gap: 6px;
+    padding: 8px 12px 16px;
+  }
+
+  .home-action-group {
+    max-width: 320px;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .enter-shop-btn {
+    padding: 11px 16px;
+    font-size: 15.5px;
+    border-radius: 16px;
+  }
+
+  .home-sub-btn {
+    padding: 8px 6px;
+    font-size: 11.5px;
+    border-radius: 12px;
+    gap: 4px;
+  }
+
+  .home-connect-compact {
+    max-width: 320px;
+    margin: 6px auto 2px;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+
+  .home-connect-text {
+    font-size: 10.5px;
+  }
+
+  .insta-gradient-tile {
+    padding: 5px 10px;
+    font-size: 10.5px;
+    gap: 4px;
+    border-radius: 9px;
+  }
+
+  /* Gameplay view compact layout */
+  #top {
+    padding: 4px 6px;
+    gap: 3px;
+  }
+
+  #top .l {
+    gap: 4px;
+  }
+
+  #top .icon-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  #top .day {
+    font-size: 13.5px;
+  }
+
+  #top .sub {
+    font-size: 10px;
+  }
+
+  #top .money {
+    font-size: 16px;
+    min-width: auto;
+  }
+
+  #top .money small {
+    font-size: 8px;
+  }
+
+  #top .stars {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  #top .rev {
+    font-size: 9.5px;
+  }
+
+  #view {
+    padding: 5px 6px 4px;
+    gap: 5px;
+  }
+
+  .street {
+    padding: 5px;
+    border-radius: 13px;
+  }
+
+  .board {
+    padding: 2px 12px 3px;
+    margin-bottom: 3px;
+    border-radius: 10px;
+  }
+
+  .board-name {
+    font-size: 13.5px;
+  }
+
+  .board-rank {
+    font-size: 8px;
+  }
+
+  .seats {
+    gap: 4px;
+  }
+
+  .seat {
+    min-height: 80px;
+    padding: 4px 5px;
+    border-radius: 12px;
+  }
+
+  .seat .avatar-ring {
+    width: 34px;
+    height: 34px;
+  }
+
+  .seat .cust-name {
+    font-size: 10.5px;
+  }
+
+  .seat .order-drink {
+    font-size: 9.5px;
+  }
+
+  .seat .order-recipe {
+    font-size: 8px;
+  }
+
+  .kitchen {
+    padding: 4px;
+    border-radius: 14px;
+    gap: 4px;
+  }
+
+  .brew-bar {
+    padding: 5px 8px;
+    border-radius: 11px;
+    margin-bottom: 4px;
+  }
+
+  .cup-3d-wrapper {
+    width: 34px;
+    height: 42px;
+  }
+
+  .cup-drink-title {
+    font-size: 11.5px;
+  }
+
+  .cup-items-list {
+    font-size: 8.5px;
+  }
+
+  .serve-action-btn {
+    font-size: 11.5px;
+    padding: 6px 10px;
+    border-radius: 9px;
+  }
+
+  .clear-btn {
+    font-size: 10.5px;
+    padding: 6px 7px;
+    border-radius: 8px;
+    margin-left: 2px;
+  }
+
+  .trays {
+    gap: 2.5px;
+  }
+
+  .tray-tile {
+    min-height: 44px;
+    padding: 2px 1px;
+    border-radius: 9px;
+  }
+
+  .tray-tile .tile-icon {
+    font-size: 16px;
+  }
+
+  .tray-tile .tile-name {
+    font-size: 7.5px;
+  }
+
+  .tray-tile .tile-badge {
+    width: 13px;
+    height: 13px;
+    font-size: 7.5px;
+    top: -2px;
+    right: -2px;
+  }
+
+  .nav-tabs {
+    padding: 4px 1px calc(4px + env(safe-area-inset-bottom, 4px));
+    gap: 1px;
+  }
+
+  .nav-tab {
+    font-size: 9px;
+    padding: 3px 0;
+  }
+
+  .nav-tab .tab-icon {
+    font-size: 14.5px;
+  }
 }
 
 

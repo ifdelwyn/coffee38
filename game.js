@@ -1204,6 +1204,7 @@ class GameEngine {
         this.dom.splash.style.display = "none";
       }, 400);
     }
+    this.resetActiveTab();
     this.paused = false;
   }
 
@@ -1456,7 +1457,11 @@ class GameEngine {
         tab.classList.add("active");
         const action = tab.dataset.tab;
         snd.playClick();
-        if (action === "menu") this.openMenuModal();
+        if (action === "play") {
+          this.dom.modal.hidden = true;
+          this.paused = false;
+        }
+        else if (action === "menu") this.openMenuModal();
         else if (action === "reviews") this.openReviewsModal();
         else if (action === "restock") this.openRestockModal();
         else if (action === "upgrade") this.openUpgradeModal();
@@ -1907,8 +1912,16 @@ class GameEngine {
       btn.onclick = () => {
         const idx = +btn.dataset.idx;
         this.dom.modal.hidden = true;
+        this.resetActiveTab();
         choices[idx].fn();
       };
+    });
+  }
+
+  resetActiveTab() {
+    document.querySelectorAll(".nav-tab").forEach(t => {
+      if (t.dataset.tab === "play") t.classList.add("active");
+      else t.classList.remove("active");
     });
   }
 
